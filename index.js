@@ -1,4 +1,9 @@
-let playerState = "fall";
+let playerState = "idle";
+
+const dropdown = document.getElementById("animations");
+dropdown.addEventListener("change", function (e) {
+  playerState = e.target.value;
+});
 
 const canvas = document.querySelector(".canvas1");
 const ctx = canvas.getContext("2d");
@@ -25,7 +30,7 @@ const animationStates = [
   },
   {
     name: "fall",
-    frames: 0,
+    frames: 7,
   },
   {
     name: "run",
