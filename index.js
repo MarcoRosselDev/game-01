@@ -9,16 +9,18 @@ playerImage.src = "shadow_dog.png";
 const spriteWithe = 575;
 const spriteHeight = 523;
 let frameX = 0;
-let frameY = 3;
+let frameY = 4;
 let gameFrame = 0;
-const staggerFrame = 6;
+const staggerFrame = 5;
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  // ctx.fillRect(100, 50, 100, 100);
+  let position = Math.floor(gameFrame / staggerFrame) % 10;
+  frameX = spriteWithe * position;
+
   ctx.drawImage(
     playerImage,
-    frameX * spriteWithe,
+    frameX,
     frameY * spriteHeight,
     spriteWithe,
     spriteHeight,
@@ -27,11 +29,6 @@ function animate() {
     spriteWithe,
     spriteHeight
   );
-
-  if (gameFrame % staggerFrame == 0) {
-    if (frameX < 6) frameX++;
-    else frameX = 0;
-  }
 
   gameFrame++;
   requestAnimationFrame(animate);
