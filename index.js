@@ -1,3 +1,5 @@
+let playerState = "fall";
+
 const canvas = document.querySelector(".canvas1");
 const ctx = canvas.getContext("2d");
 
@@ -8,7 +10,6 @@ const playerImage = new Image();
 playerImage.src = "shadow_dog.png";
 const spriteWidth = 575;
 const spriteHeight = 523;
-let playerState = "sit";
 
 let gameFrame = 0;
 const staggerFrames = 5;
